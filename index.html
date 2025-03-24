@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Alarm Clock</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Advanced Alarm Clock</h1>
+        <div class="time" id="current-time">00:00:00</div>
+
+        <label for="alarm-date">Select Date:</label>
+        <input type="date" id="alarm-date">
+
+        <label for="alarm-time">Select Time:</label>
+        <input type="time" id="alarm-time">
+
+        <label for="alarm-tone">Select Tone:</label>
+        <select id="alarm-tone">
+            <option value="https://www.soundjay.com/button/beep-07.wav">Beep</option>
+            <option value="https://www.soundjay.com/button/beep-09.wav">Buzzer</option>
+            <option value="https://www.soundjay.com/button/beep-10.wav">Chime</option>
+            <option value="https://www2.cs.uic.edu/~i101/SoundFiles/StarWars3.wav">Star Wars Theme</option>
+            <option value="https://actions.google.com/sounds/v1/alarms/digital_watch_alarm_long.ogg">Digital Watch</option>
+            <option value="https://actions.google.com/sounds/v1/alarms/spaceship_alarm.ogg">Spaceship Alarm</option>
+            <option value="custom">Upload Custom Tone</option>
+        </select>
+
+        <input type="file" id="custom-tone" accept="audio/*" style="display:none;">
+
+        <label for="alarm-repeat">Repeat:</label>
+        <select id="alarm-repeat">
+            <option value="once">Once</option>
+            <option value="daily">Daily</option>
+            <option value="weekly">Weekly</option>
+            <option value="yearly">Yearly</option>
+        </select>
+
+        <br>
+        <button onclick="setAlarm()">Set Alarm</button>
+        <button id="cancel-alarm" onclick="cancelAlarm()">Cancel Alarm</button>
+
+        <p id="alarm-status"></p>
+    </div>
+
+    <audio id="alarm-sound" preload="auto"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
